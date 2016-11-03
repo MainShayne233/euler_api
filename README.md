@@ -8,7 +8,7 @@ This API does not use Project Euler's backend, so it needs solution contribution
 The currently known solutions are in ```data/solutions.txt```. If you have a solution to add,
 please fork this repo, add it to the list, and make a pull request!
 
-Here is a guide on how to fork and make a pull request https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
+Here is a guide on how to fork and make a pull request: https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
 
 ## How to use
 This is a REST API, which basically means you send an HTTP request to check your solution.

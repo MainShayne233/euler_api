@@ -19,7 +19,28 @@ defmodule Euler do
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Euler.Supervisor]
-    Supervisor.start_link(children, opts)
+    start = Supervisor.start_link(children, opts)
+    Euler.Repo.delete_all Euler.Problem
+    File.read!("./data/solutions.txt")
+    |> String.split("\n")
+    |> Enum.filter( &(&1 != "") )
+    |> Enum.map(fn (row) ->
+      row
+      |> String.split(" ")
+    end)
+    |> Enum.map(&(
+      %{
+        number: &1 |> Enum.at(0) |> String.to_integer,
+        solution: &1 |> Enum.at(1)
+      }
+    ))
+    |> Enum.each(fn (problem) ->
+      %Euler.Problem{}
+      |> Euler.Problem.changeset(problem)
+      |> Euler.Repo.insert
+      |> IO.inspect
+    end)
+    start
   end
 
   # Tell Phoenix to update the endpoint configuration

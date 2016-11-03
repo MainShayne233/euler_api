@@ -1,7 +1,5 @@
 # ProjectEulerAPI
-https://projecteulerapi.herokuapp.com/api/
-
-Lets you can programtically check your solutions!
+Lets you can programmatically check your solutions!
 
 ## Not complete!
 This API does not use Project Euler's backend, so it needs solution contributions!

@@ -12,7 +12,7 @@ config :euler,
 # Configures the endpoint
 config :euler, Euler.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "z/PfPB0EwmkjGG8OkWshYP0iTM8jF+lCQrNB1AspxSsKFMNCmTHG9jpNdkASig35",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: Euler.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Euler.PubSub,
            adapter: Phoenix.PubSub.PG2]

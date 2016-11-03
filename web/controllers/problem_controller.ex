@@ -12,4 +12,5 @@ defmodule Euler.ProblemController do
         json conn, %{result: correctness, status: 200, error: nil}
     end
   end
+
 end

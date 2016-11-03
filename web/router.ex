@@ -24,5 +24,8 @@ defmodule Euler.Router do
     pipe_through :api
 
     get "/problem/:number/check/:solution", ProblemController, :check
+
+    get "/problem/", ProblemController, :check
+
   end
 end

@@ -59,7 +59,7 @@ config :logger, level: :info
 
 # Configure secret_key_base for cookie-based session storage
 
-  config :my_app, Euler.Repo,
+config :euler, Euler.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   size: 20 # The amount of database connections in the pool

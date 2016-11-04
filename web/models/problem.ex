@@ -26,6 +26,7 @@ defmodule Euler.Problem do
       row
       |> String.split(" ")
     end)
+    |> Enum.filter(&(Enum.count(&1) == 2))
     |> Enum.map(&(
       %{
         number: &1 |> Enum.at(0) |> String.to_integer,
